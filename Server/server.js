@@ -47,7 +47,9 @@ app.use(require("./src/Routes/postsRoutes"));
 app.use(require("./src/Routes/commentsRoutes"));
 app.use(require("./src/Routes/followUnfollowRoutes"));
 
-
+app.get("/", (req, res) =>{
+    res.send("Hello from the Social media server");
+})
 
 app.post("/post/upload", upload.single("postImage") , async (req, res)=>{
     // get user
